@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation on Mouse Move</title>
+</head>
+    <style>
+        body{
+            cursor: none;
+        }
+        .mouse{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            border-radius: 50%;
+            position: absolute;
+            /* display: none; */
+            transition: 0.1s;
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1;
+            /* visibility: hidden; */
+        }
+        .mouse2{
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            border-radius: 50%;
+            position: absolute;
+            transition: 0.2s;
+        }
+        .mouse3{
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+            transition: 0.3s;
+        }
+        .mouse4{
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            transition: 0.4s;
+        }
+    </style>
+<body>
+    <div class="mouse"></div>
+    <div class="mouse2 mouse"></div>
+    <div class="mouse3 mouse"></div>
+    <div class="mouse4 mouse"></div>
+    <!-- <div class="mouse"></div> -->
+    <!-- <div class="mouse"></div> -->
+    <!-- <div class="mouse"></div> -->
+    <!-- <div class="mouse"></div> -->
+
+
+<script src="jquery.js"></script>
+<script>
+    $(window).on('mousemove',function(e){
+        var mouse_x_axis = e.offsetX;
+        var mouse_y_axis = e.offsetY;
+        $('.mouse').css({left:mouse_x_axis, top:mouse_y_axis,opacity:'1', visibility:'visible'})
+        // $('.mouse').animate({left:mouse_x_axis-20, top:mouse_y_axis-15,},0,'linear')
+        
+    })
+</script>    
+</body>
+</html>
